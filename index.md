@@ -17,4 +17,4 @@ This is an internal test page with an interactive data visualization.
 
 Lastly, the measles incidence produced using the HvPlot package:
 
-<div id="hv-chart-1"></div>
+<div id="hv-chart-2"></div>
