@@ -1,9 +1,9 @@
-title: MUSA 550
-logo: /assets/img/logo.png
-description: Geospatial Data Science in Python.
+title: Peak Season CMEC Test Page
+#logo: /assets/img/logo.png
+description: Internal testing page for interactive data visualization.
 show_downloads: false
-repository: MUSA-550-Fall-2021/github-pages-single-page-starter
-google_analytics:
+repository: kristinchang3/peak_season_cmec
+#google_analytics:
 remote_theme: pages-themes/minimal
 plugins:
   - jekyll-remote-theme
