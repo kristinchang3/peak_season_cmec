@@ -3,7 +3,7 @@ layout: default
 #altair-loader:
 #  altair-chart-1: "charts/measlesAltair.json"
 hv-loader:
-  hv-chart-1: ["charts/peak_plot01.html", "250"] # second argument is the desired height
+  hv-chart-1: ["charts/peak_plot01.html", "50"] # second argument is the desired height
 #folium-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
