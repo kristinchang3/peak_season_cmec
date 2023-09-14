@@ -15,6 +15,6 @@ This is an internal test page with an interactive data visualization.
 
 # Portrait Plot
 
-Lastly, the measles incidence produced using the HvPlot package:
+Visualizing the Peak Season CMEC data:
 
 <div id="hv-chart-1"></div>
