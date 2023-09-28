@@ -24,18 +24,18 @@ dd = dd.rename(columns={"level_0": "model", "level_1": "region", 0 :"peak"})
 ddd = dd['peak'].values
 
 
-img_links = ['https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/BCC-CSM2-MR.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/ERA5.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MERRA2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1.png', 
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/BCC-CSM2-MR.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/ERA5.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MERRA2.png'
+img_links = ['https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_California_2_0.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_SAmerica_2_1.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_Africa_2_2.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_California_2_0.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_SAmerica_2_1.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_Africa_2_2.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_California_2_0.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_SAmerica_2_1.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_Africa_2_2.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_California_2_0.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_SAmerica_2_1.png',
+             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_Africa_2_2.png'
              ]
 
 dd['img'] = img_links
