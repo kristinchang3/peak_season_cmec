@@ -13,6 +13,19 @@ hv-loader:
 
 This is an internal test page with an interactive data visualization.
 
+# AR Regions
+MJJAS
+
+<img src="images/MJJAS.png"
+     alt="MJJAS"
+     style="float: left; margin-right:10px;" />
+
+NDJFM
+
+<img src="images/NDJFM.png"
+     alt="NDJFM"
+     style="float: left; margin-right:10px;" />
+
 # Portrait Plot
 
 Visualizing the Peak Season CMEC data:
