@@ -14,17 +14,19 @@ hv-loader:
 This is an internal test page with an interactive data visualization.
 
 # AR Regions
-MJJAS
+### MJJAS
 
 <img src="images/MJJAS.png"
      alt="MJJAS"
      style="float: left; margin-right:10px;" />
+<br>
 
-NDJFM
+### NDJFM
 
 <img src="images/NDJFM.png"
      alt="NDJFM"
      style="float: left; margin-right:10px;" />
+<br>
 
 # Portrait Plot
 
