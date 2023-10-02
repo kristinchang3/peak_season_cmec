@@ -71,3 +71,5 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                            'yticks': 14
                        })
 peak_plot11
+
+hvplot.save(peak_plot11, 'charts/peak_plot12.html')
