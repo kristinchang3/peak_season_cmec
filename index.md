@@ -17,10 +17,14 @@ This is an internal test page with an interactive data visualization.
 
 # AR Regions
 ### MJJAS
-![MJJAS](images/MJJAS.png)
+<p align="center">
+  <img src="images/MJJAS.png" width="400"/>
+</p>
 
 ### NDJFM
-![NDJFM](images/NDJFM.png)
+<p align="center">
+  <img src="images/NDJFM.png" width="400"/>
+</p>
 
 # Portrait Plot
 
