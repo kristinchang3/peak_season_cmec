@@ -82,18 +82,19 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        hover_cols = ['img'],
                        tools = [hover],
                        height = 500,
-                       width=550,
+                       width=1550,
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
+                       clim = (-200,200),
 #                       cmap='blues').opts(xrotation=45, fontsize={
                        cmap='RdBu_r').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14
                        })
-#peak_plot11
+peak_plot11
 
-plt.show()
+#plt.show()
 
 hvplot.save(peak_plot11, 'charts/peak_plot13.html')
