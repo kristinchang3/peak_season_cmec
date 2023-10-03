@@ -8,13 +8,25 @@ from PIL import Image
 import os, os.path
 from bokeh.models import HoverTool
 
-angle = np.array([[  0,  86, 199],
-       [ 23, 111, 271],
-       [ 16,  97, 226],
-       [ 17, 103, 159]])
+#angle = np.array([[  0,  86, 199],
+#       [ 23, 111, 271],
+#       [ 16,  97, 226],
+#       [ 17, 103, 159]])
 
-model_names = ["CanESM2","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0"]
-region_names = ['California','S.America', 'W.Africa']
+peak = np.loadtxt('/pscratch/sd/d/dong12/metrics/output_diff.txt')
+angle = peak.reshape(5,6)
+#[[  -5.   11. -156.   -2.  -16.  -77.]
+ref_peak = np.array([5,75,-10,-105,141,154])
+ref_peak = np.atleast_2d(ref_peak)
+ref_peak = np.repeat(ref_peak,repeats=5, axis=0)
+
+angle = angle - ref_peak
+print(angle)
+
+#model_names = ["CanESM2","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0"]
+#region_names = ['California','S.America', 'W.Africa']
+model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
+region_names = ['California','SAmerica', 'Africa','NEurope','Australia','SAfrica']
 
 da = pd.DataFrame(data=angle, index=model_names, columns=region_names)
 
@@ -23,24 +35,33 @@ dd = dd.reset_index()
 dd = dd.rename(columns={"level_0": "model", "level_1": "region", 0 :"peak"})
 ddd = dd['peak'].values
 
+img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/'
+img_links = []
 
-img_links = ['https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_California_2_0.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_SAmerica_2_1.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_Africa_2_2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_California_2_0.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_SAmerica_2_1.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_Africa_2_2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_California_2_0.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_SAmerica_2_1.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_Africa_2_2.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_California_2_0.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_SAmerica_2_1.png',
-             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_Africa_2_2.png'
-             ]
+for i, model in enumerate(model_names):
+    for j, region in enumerate(region_names):
+        filename = img_path+'fig_'+str(i)+"_"+str(j)+'.png'
+        img_links.append(filename)
+
+#print(img_links)
+
+#img_links = ['https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_California_2_0.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_SAmerica_2_1.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CanESM2_Africa_2_2.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_California_2_0.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_SAmerica_2_1.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/CSIRO-Mk3-6-0_Africa_2_2.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_California_2_0.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_SAmerica_2_1.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/NorESM1-M_Africa_2_2.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_California_2_0.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_SAmerica_2_1.png',
+#             'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/MRI-ESM2-0_Africa_2_2.png'
+#             ]
 
 dd['img'] = img_links
 
-print(dd)
+#print(dd)
 
 # adjust pandas settings to view full column width
 pd.set_option('max_colwidth', 1000)
@@ -65,11 +86,14 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
-                       cmap='blues').opts(xrotation=45, fontsize={
+#                       cmap='blues').opts(xrotation=45, fontsize={
+                       cmap='RdBu_r').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14
                        })
-peak_plot11
+#peak_plot11
 
-hvplot.save(peak_plot11, 'charts/peak_plot12.html')
+plt.show()
+
+hvplot.save(peak_plot11, 'charts/peak_plot13.html')
