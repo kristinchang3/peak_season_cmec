@@ -10,24 +10,27 @@ hv-loader:
 #folium-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
+<div style="text-align: center;" markdown="1">
+# Welcome! 
 
-# Welcome! {style=text-align:center}
-
-This is an internal test page with an interactive data visualization. {style=text-align:center}
-
-# AR Regions {style=text-align:center}
-### MJJAS {style=text-align:center}
+This is an internal test page with an interactive data visualization. 
+</div>
+<div style="text-align: center;" markdown="1">
+# AR Regions 
+### MJJAS 
 <p align="center">
   <img src="images/MJJAS.png" width="400"/>
 </p>
-
-### NDJFM {style=text-align:center}
+</div>
+<div style="text-align: center;" markdown="1">
+### NDJFM 
 <p align="center">
   <img src="images/NDJFM.png" width="400"/>
 </p>
+</div>
+<div style="text-align: center;" markdown="1">
+# Portrait Plot 
 
-# Portrait Plot {style=text-align:center}
-
-Visualizing the Peak Season CMEC data: {style=text-align:center}
-
+Visualizing the Peak Season CMEC data: 
+</div>
 <div id="hv-chart-2"></div>
