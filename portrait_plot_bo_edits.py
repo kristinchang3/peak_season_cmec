@@ -13,7 +13,7 @@ from bokeh.models import HoverTool
 #       [ 16,  97, 226],
 #       [ 17, 103, 159]])
 
-peak = np.loadtxt('/pscratch/sd/d/dong12/metrics/output_diff.txt')
+peak = np.loadtxt('data/output_diff.txt')
 angle = peak.reshape(5,6)
 #[[  -5.   11. -156.   -2.  -16.  -77.]
 ref_peak = np.array([5,75,-10,-105,141,154])
@@ -82,7 +82,7 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        hover_cols = ['img'],
                        tools = [hover],
                        height = 500,
-                       width=1550,
+                       width=800,
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
@@ -93,8 +93,7 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                            'xticks': 14,
                            'yticks': 14
                        })
-peak_plot11
 
 #plt.show()
 
-hvplot.save(peak_plot11, 'charts/peak_plot13.html')
+hvplot.save(peak_plot11, 'charts/peak_plot14.html')
