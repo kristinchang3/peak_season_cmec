@@ -13,19 +13,15 @@ from bokeh.models import HoverTool
 #       [ 16,  97, 226],
 #       [ 17, 103, 159]])
 
-peak = np.loadtxt('data/output_diff.txt')
-angle = peak.reshape(5,6)
-#[[  -5.   11. -156.   -2.  -16.  -77.]
-ref_peak = np.array([5,75,-10,-105,141,154])
-ref_peak = np.atleast_2d(ref_peak)
-ref_peak = np.repeat(ref_peak,repeats=5, axis=0)
-
-#angle = angle - ref_peak
+#peak = np.loadtxt('data/output_diff.txt')
+peak = np.loadtxt('data/output_peak_reanalysis.txt')
+angle = peak.reshape(3,-1)
 
 #if angle < -182:
 #    angle += 365
 #elif angle > 182:
 #    angle -= 365
+
 
 angle = np.where(angle < -182, angle+365, angle)
 angle = np.where(angle >  182, angle-365, angle)
@@ -34,7 +30,8 @@ print(angle)
 
 #model_names = ["CanESM2","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0"]
 #region_names = ['California','S.America', 'W.Africa']
-model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
+#model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
+model_names = ['ERA5','MERRA2','JRA55C']
 region_names = ['California','SAmerica', 'Africa','NEurope','Australia','SAfrica']
 
 da = pd.DataFrame(data=angle, index=model_names, columns=region_names)
@@ -51,7 +48,7 @@ img_links = []
 
 for i, model in enumerate(model_names):
     for j, region in enumerate(region_names):
-        filename = img_path+'fig_'+str(i)+"_"+str(j)+'.png'
+        filename = img_path+'fig_re_'+str(i)+"_"+str(j)+'.png'
         img_links.append(filename)
 
 #print(img_links)
@@ -97,7 +94,7 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
-                       clim = (-200,200),
+                       clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
                        cmap='RdBu_r').opts(xrotation=45, fontsize={
                            'labels': 14,
@@ -107,4 +104,4 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
 
 plt.show()
 
-hvplot.save(peak_plot11, 'charts/peak_plot16.html')
+hvplot.save(peak_plot11, 'charts/peak_plot17.html')
