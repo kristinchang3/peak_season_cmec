@@ -38,22 +38,22 @@ Visualizing the Peak Season CMEC data:
 <div style="text-align: center;" markdown="1">
 # AR character metrics
 <p align="center">
-  <img src="images/AR_character_N. Pacific.png" width="400"/>
+  <img src="images/AR_character_N. Pacific.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="images/AR_character_S. Pacific.png" width="400"/>
+  <img src="images/AR_character_S. Pacific.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="images/AR_character_N. Atlantic.png" width="400"/>
+  <img src="images/AR_character_N. Atlantic.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="images/AR_character_S. Atlantic.png" width="400"/>
+  <img src="images/AR_character_S. Atlantic.png" width="600"/>
 </p>
 
 <p align="center">
-  <img src="images/AR_character_Indian_Ocean.png" width="400"/>
+  <img src="images/AR_character_Indian Ocean.png" width="600"/>
 </p>
 
