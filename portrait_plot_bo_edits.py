@@ -92,8 +92,7 @@ hover = HoverTool(tooltips="""
 
 """)
 
-peak_plot11 = dd.hvplot.heatmap(
-                       x='model',
+peak_plot11 = dd.hvplot.heatmap(x='model',
                        y='region',
                        C='peak',
                        hover_cols = ['img'],
@@ -101,7 +100,7 @@ peak_plot11 = dd.hvplot.heatmap(
                        height = 800,
                        width=500,
                        colorbar=True,
-                       clabel = 'peak day',
+                       clabel = 'peak day bias',
                        xaxis='top',
                        clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
@@ -113,4 +112,4 @@ peak_plot11 = dd.hvplot.heatmap(
 
 plt.show()
 
-hvplot.save(peak_plot11, 'charts/peak_plot18.html')
+hvplot.save(peak_plot11, 'charts/peak_plot19.html')
