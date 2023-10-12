@@ -13,12 +13,16 @@ from bokeh.models import HoverTool
 #       [ 16,  97, 226],
 #       [ 17, 103, 159]])
 
-peak = np.loadtxt('data/output_diff.txt')
-angle = peak.reshape(5,6)
+#peak = np.loadtxt('data/output_diff.txt')
+#angle = peak.reshape(5,6)
+peak = np.loadtxt('data/output_diff_all_region.txt')
+angle = peak.reshape(5,-1)
 #[[  -5.   11. -156.   -2.  -16.  -77.]
-ref_peak = np.array([5,75,-10,-105,141,154])
-ref_peak = np.atleast_2d(ref_peak)
-ref_peak = np.repeat(ref_peak,repeats=5, axis=0)
+#   5.   75.  -40. -102.  166.  151.]
+#ref_peak = np.array([5,75,-10,-105,141,154]) ## !!!! wrong numbers  !!!!
+#ref_peak = np.array([5,75,-40,-102,166,151])
+#ref_peak = np.atleast_2d(ref_peak)
+#ref_peak = np.repeat(ref_peak,repeats=5, axis=0)
 
 #angle = angle - ref_peak
 
@@ -36,6 +40,7 @@ print(angle)
 #region_names = ['California','S.America', 'W.Africa']
 model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
 region_names = ['California','SAmerica', 'Africa','NEurope','Australia','SAfrica']
+region_names = region_names + ['Baja','PAC NW','New Zealand','Alaska']
 
 da = pd.DataFrame(data=angle, index=model_names, columns=region_names)
 
@@ -87,17 +92,18 @@ hover = HoverTool(tooltips="""
 
 """)
 
-peak_plot11 = dd.hvplot.heatmap(y='model',
-                       x='region',
+peak_plot11 = dd.hvplot.heatmap(
+                       x='model',
+                       y='region',
                        C='peak',
                        hover_cols = ['img'],
                        tools = [hover],
-                       height = 500,
-                       width=800,
+                       height = 800,
+                       width=500,
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
-                       clim = (-200,200),
+                       clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
                        cmap='RdBu_r').opts(xrotation=45, fontsize={
                            'labels': 14,
@@ -107,4 +113,4 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
 
 plt.show()
 
-hvplot.save(peak_plot11, 'charts/peak_plot16.html')
+hvplot.save(peak_plot11, 'charts/peak_plot18.html')
