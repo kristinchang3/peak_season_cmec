@@ -9,8 +9,7 @@ hv-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
 <div style="text-align: center;" markdown="1">
-# Welcome! 
-<span style="color:red">This is a test page for Bo's branch</span> 
+<h1><span style="color:red">This is a test page for Bo's branch</span></h1>
 </div>
 <div style="text-align: center;" markdown="1">
 # AR Regions 
