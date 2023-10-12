@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import panel as pn
 from matplotlib import pyplot as plt
+import holoviews as hv
 import hvplot.pandas
 from PIL import Image
 import os, os.path
@@ -116,6 +117,8 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                            'xticks': 14,
                            'yticks': 14
                        })
+
+peak_plot11 = peak_plot11 * hv.Labels(peak_plot11)
 
 plt.show()
 

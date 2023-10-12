@@ -3,6 +3,7 @@ import pandas as pd
 import json
 import panel as pn
 from matplotlib import pyplot as plt
+import holoviews as hv
 import hvplot.pandas
 from PIL import Image
 import os, os.path
@@ -92,13 +93,28 @@ hover = HoverTool(tooltips="""
 
 """)
 
+# Use number of models and regions to determine cell size
+num_models = len(dd['model'].unique())
+num_regions = len(dd['region'].unique())
+
+cell_width = 1/num_models
+cell_height = 1/num_regions
+
+# set desired figure size
+desired_width = 2000
+desired_height = 2000
+
+# calculate final width and height based on above parameters
+adjusted_width = round(int(cell_width * desired_width), -1)
+adjusted_height = round(int(cell_height * desired_height), -1)
+
 peak_plot11 = dd.hvplot.heatmap(x='model',
                        y='region',
                        C='peak',
                        hover_cols = ['img'],
                        tools = [hover],
-                       height = 800,
-                       width=500,
+                       height = adjusted_height,
+                       width=adjusted_width,
                        colorbar=True,
                        clabel = 'peak day bias',
                        xaxis='top',
@@ -109,6 +125,8 @@ peak_plot11 = dd.hvplot.heatmap(x='model',
                            'xticks': 14,
                            'yticks': 14
                        })
+
+peak_plot11 = peak_plot11 * hv.Labels(peak_plot11)
 
 plt.show()
 
