@@ -10,9 +10,7 @@ hv-loader:
 ---
 <div style="text-align: center;" markdown="1">
 # Welcome! 
-
-
-# <span style="color:red">Bo's branch</span> 
+<span style="color:red">This is a test page for Bo's branch</span> 
 </div>
 <div style="text-align: center;" markdown="1">
 # AR Regions 
