@@ -32,11 +32,12 @@ This is an internal test page with an interactive data visualization.
 # Portrait Plot 
 
 Visualizing the Peak Season CMEC data: 
-</div>
+
 ## Landfalling AR Peak Day Bias vs. ERA5
 <div id="hv-chart-1"></div>
 ## Landfalling AR Peak Day in Reanalyses
 <div id="hv-chart-2"></div>
+</div>
 
 </div>
 <div style="text-align: center;" markdown="1">
