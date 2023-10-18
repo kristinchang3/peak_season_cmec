@@ -16,7 +16,7 @@ from bokeh.models import HoverTool
 
 #peak = np.loadtxt('data/output_diff.txt')
 #angle = peak.reshape(5,6)
-peak = np.loadtxt('data/output_diff_all_region_full.txt')
+peak = np.loadtxt('bo_data/output_diff_all_region_full.txt')
 angle = peak.reshape(5,-1)
 #[[  -5.   11. -156.   -2.  -16.  -77.]
 #   5.   75.  -40. -102.  166.  151.]
@@ -133,4 +133,4 @@ peak_plot11 = peak_plot11 * hv.Labels(peak_plot11)
 
 plt.show()
 
-hvplot.save(peak_plot11, 'charts/peak_plot22.html')
+hvplot.save(peak_plot11, 'bo_charts/peak_plot22.html')
