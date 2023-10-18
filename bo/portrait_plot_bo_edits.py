@@ -97,11 +97,11 @@ hover = HoverTool(tooltips="""
 num_models = len(dd['model'].unique())
 num_regions = len(dd['region'].unique())
 
-#cell_width = 1/num_models
-#cell_height = 1/num_regions
+cell_width = 1/num_models
+cell_height = 1/num_regions
 
-cell_height = 1/num_models
-cell_width = 1/num_regions
+#cell_height = 1/num_models
+#cell_width = 1/num_regions
 
 # set desired figure size
 desired_width = 5000
