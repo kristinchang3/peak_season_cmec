@@ -3,8 +3,8 @@ layout: default
 #altair-loader:
 #  altair-chart-1: "charts/measlesAltair.json"
 hv-loader:
-  hv-chart-1: ["charts/peak_plot18.html", "800"] # second argument is the desired height
-  hv-chart-2: ["charts/peak_plot17.html", "800"]
+  hv-chart-1: ["charts/reanalyses_plot02.html", "1000"] # second argument is the desired height
+  hv-chart-2: ["charts/bias_vs_era5_02.html", "800"]
 #folium-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
@@ -32,9 +32,13 @@ This is an internal test page with an interactive data visualization.
 # Portrait Plot 
 
 Visualizing the Peak Season CMEC data: 
-</div>
+
+## Landfalling AR Peak Day in Reanalyses
 <div id="hv-chart-1"></div>
+
+## Landfalling AR Peak Day Bias vs. ERA5
 <div id="hv-chart-2"></div>
+</div>
 
 </div>
 <div style="text-align: center;" markdown="1">
