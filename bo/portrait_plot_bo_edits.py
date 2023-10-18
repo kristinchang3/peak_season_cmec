@@ -104,8 +104,8 @@ cell_height = 1/num_regions
 #cell_width = 1/num_regions
 
 # set desired figure size
-desired_width = 5000
-desired_height = 5000
+desired_width = 3000
+desired_height = 11000
 
 # calculate final width and height based on above parameters
 adjusted_width = round(int(cell_width * desired_width), -1)
