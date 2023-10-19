@@ -30,16 +30,18 @@ hv-loader:
 Visualizing the Peak Season: 
 </div>
 
+<div style="text-align: center;" markdown="1">
 ## Landfalling AR Peak Day in Reanalyses
 <div id="hv-chart-1"></div>
 
 ## Landfalling AR Peak Day Bias, model vs. ERA5
 <div id="hv-chart-2"></div>
-
+</div>
 
 <div style="text-align: center;" markdown="1">
   
 # AR character metrics, model vs. ERA5
+</div>
 <p align="center">
   <img src="bo_images/AR_character_N. Pacific.png" width="600"/>
 </p>
