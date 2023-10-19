@@ -15,7 +15,8 @@ from bokeh.models import HoverTool
 #       [ 17, 103, 159]])
 
 #peak = np.loadtxt('data/output_diff.txt')
-peak = np.loadtxt('bo_data/output_peak_reanalysis_full.txt')
+peak = np.loadtxt('bo_data/output_peak_reanalysis.txt')
+#peak = np.loadtxt('bo_data/output_peak_reanalysis_full.txt')
 angle = peak.reshape(3,-1)
 
 #if angle < -182:
