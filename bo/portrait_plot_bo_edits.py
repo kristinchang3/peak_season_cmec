@@ -53,7 +53,8 @@ ddd = dd['peak'].values
 
 #print(dd)
 
-img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/'
+#img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/'
+img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/bo/bo_images/'
 img_links = []
 
 for i, model in enumerate(model_names):
