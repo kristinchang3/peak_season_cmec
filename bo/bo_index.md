@@ -27,14 +27,19 @@ hv-loader:
 <div style="text-align: center;" markdown="1">
 # Portrait Plot 
 
-Visualizing the Peak Season CMEC data: 
+Visualizing the Peak Season: 
 </div>
+
+## Landfalling AR Peak Day in Reanalyses
 <div id="hv-chart-1"></div>
+
+## Landfalling AR Peak Day Bias, model vs. ERA5
 <div id="hv-chart-2"></div>
 
-</div>
+
 <div style="text-align: center;" markdown="1">
-# AR character metrics
+  
+# AR character metrics, model vs. ERA5
 <p align="center">
   <img src="bo_images/AR_character_N. Pacific.png" width="600"/>
 </p>
