@@ -47,7 +47,7 @@ ddd = dd['peak'].values
 #print(dd)
 
 #img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/'
-img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/bo/bo_images/'
+img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/bo/bo_images/'
 img_links = []
 
 for i, model in enumerate(model_names):
@@ -128,4 +128,4 @@ peak_plot11 = peak_plot11 * hv.Labels(peak_plot11)
 
 plt.show()
 
-hvplot.save(peak_plot11, 'bo_charts/peak_plot25.html')
+hvplot.save(peak_plot11, 'bo_charts/peak_plot27.html')
