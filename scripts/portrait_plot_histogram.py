@@ -29,7 +29,7 @@ xaxis_labels = field_list
 maxvalue = np.max(narr)
 minvalue = np.min(narr)
 maxvalue = max(maxvalue, minvalue*-1)
-maxvalue *= 0.7
+maxvalue *= 0.9
 minvalue = maxvalue*-1
 # 
 # fig, ax, cbar = \
