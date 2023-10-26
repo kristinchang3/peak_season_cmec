@@ -5,6 +5,7 @@ layout: default
 hv-loader:
   hv-chart-1: ["charts/reanalyses_plot02.html", "1000"] # second argument is the desired height
   hv-chart-2: ["charts/bias_vs_era5_03.html", "1100"]
+  hv-chart-3: ["charts/peak_plot31.html", "1000"]
 #folium-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
