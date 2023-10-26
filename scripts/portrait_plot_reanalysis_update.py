@@ -19,7 +19,7 @@ bottom = matplotlib.colormaps['Blues']
 newcolors = np.vstack((top(np.linspace(0, 1, 16)),
                        bottom(np.linspace(0, 1, 16))))
 
-newcmp = ListedColormap(newcolors, name='cyclic')
+newcmp = ListedColormap(newcolors, name='cyclic0')
 
 #angle = np.array([[  0,  86, 199],
 #       [ 23, 111, 271],
@@ -128,12 +128,12 @@ peak_plot11 = dd.hvplot.heatmap(y='region',
                        colorbar=True,
                        clabel = 'peak day',
                        xaxis='top',
-                       clim = (-180,180),
+#                       clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
 #                       cmap='RdBu_r').opts(xrotation=45, fontsize={
 #                       cmap='twilight').opts(xrotation=45, fontsize={
-                       cmap='cyclic').opts(xrotation=45, fontsize={
-#                       cmap='erdc_iceFire').opts(xrotation=45, fontsize={
+#                       cmap=newcmp.colors).opts(xrotation=45, fontsize={
+                       clim = (-180,180)).opts(cmap=newcmp, xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14
