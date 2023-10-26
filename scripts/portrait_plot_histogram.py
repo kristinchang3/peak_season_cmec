@@ -19,6 +19,7 @@ from bokeh.models import HoverTool
 
 
 narr = np.loadtxt("/pscratch/sd/d/dong12/metrics/hist_NAtlantic.txt")
+narr = np.around(narr, decimals=1)
 
 field_list = ['lat','lon','area','width','length']
 region_list = ['N. Pacific','S. Pacific','N. Atlantic','S. Atlantic','Indian Ocean']
