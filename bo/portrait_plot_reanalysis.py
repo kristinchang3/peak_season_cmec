@@ -34,7 +34,7 @@ print(angle)
 #region_names = ['California','S.America', 'W.Africa']
 #model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
 model_names = ['ERA5','MERRA2','JRA55C']
-region_names = ['California','SAmerica', 'Africa','NEurope','Australia','SAfrica']
+region_names = ['California','SAmerica', 'WAfrica','NEurope','Australia','SAfrica']
 region_names = region_names + ['Baja','PAC NW','New Zealand','Alaska'] + ['UK','WEurope']
 
 da = pd.DataFrame(data=angle, index=model_names, columns=region_names)
@@ -47,7 +47,7 @@ ddd = dd['peak'].values
 #print(dd)
 
 #img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/images/'
-img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/bo/bo_images/'
+img_path = 'https://raw.githubusercontent.com/kristinchang3/peak_season_cmec/main/bo/bo_images/'
 img_links = []
 
 for i, model in enumerate(model_names):
@@ -118,7 +118,8 @@ peak_plot11 = dd.hvplot.heatmap(y='region',
                        xaxis='top',
                        clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
-                       cmap='RdBu_r').opts(xrotation=45, fontsize={
+#                       cmap='RdBu_r').opts(xrotation=45, fontsize={
+                       cmap='twilight').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14

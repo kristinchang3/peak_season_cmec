@@ -40,8 +40,10 @@ print(angle)
 
 #model_names = ["CanESM2","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0"]
 #region_names = ['California','S.America', 'W.Africa']
-model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
-region_names = ['California','SAmerica', 'Africa','NEurope','Australia','SAfrica']
+#model_names = ["cmip5_CanESM2","cmip5_CCSM4","cmip5_CSIRO-Mk3-6-0","cmip5_NorESM1-M","cmip6_MRI-ESM2-0"]
+#model_names = ['cmip5_IPSL-CM5A-LR', 'cmip5_IPSL-CM5B-LR', 'cmip6_IPSL-CM6A-LR']
+model_names = ["CanESM2","CCSM4","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0",'IPSL-CM5A-LR', 'IPSL-CM5B-LR', 'IPSL-CM6A-LR']
+region_names = ['California','SAmerica', 'WAfrica','NEurope','Australia','SAfrica']
 region_names = region_names + ['Baja','PAC NW','New Zealand','Alaska'] + ['UK','WEurope']
 
 da = pd.DataFrame(data=angle, index=model_names, columns=region_names)
