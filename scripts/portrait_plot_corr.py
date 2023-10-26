@@ -58,7 +58,7 @@ model_names = ["CanESM2","CCSM4","CSIRO-Mk3-6-0","NorESM1-M","MRI-ESM2-0","BCC-C
 region_names = region_list
 field_names = field_list
 
-da = pd.DataFrame(data=narr, index=model_names, columns=field_names)
+da = pd.DataFrame(data=narr, index=model_names, columns=region_list)
 
 dd = da.stack()
 dd = dd.reset_index()
@@ -117,9 +117,11 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        colorbar=True,
                        clabel = 'spatial correlation',
                        xaxis='top',
-                       clim = (minvalue, maxvalue),
+#                       clim = (minvalue, maxvalue),
+                       clim = (0.8, 1),
 #                       cmap='blues').opts(xrotation=45, fontsize={
-                       cmap='RdBu_r').opts(xrotation=45, fontsize={
+#                       cmap='RdBu_r').opts(xrotation=45, fontsize={
+                       cmap='GnBu_r').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14

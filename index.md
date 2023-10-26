@@ -54,6 +54,10 @@ Visualizing the Peak Season CMEC data:
 <div style="text-align: center;" markdown="1">
 # AR character metrics
 <p align="center">
+  <img src="images/AR_count_plot.png" width="600"/>
+</p>
+
+<p align="center">
   <img src="images/AR_character_N. Pacific.png" width="600"/>
 </p>
 
