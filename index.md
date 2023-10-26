@@ -7,6 +7,7 @@ hv-loader:
   hv-chart-1: ["charts/peak_plot27.html", "1000"] # second argument is the desired height
   hv-chart-2: ["charts/bias_vs_era5_03.html", "1100"]
   hv-chart-3: ["charts/peak_plot31.html", "1000"]
+  hv-chart-4: ["charts/peak_plot32.html", "1000"]
 #folium-loader:
 #  folium-chart-1: ["charts/foliumChart.html", "400"] # second argument is the desired height
 ---
@@ -43,6 +44,9 @@ Visualizing the Peak Season CMEC data:
 
 ## AR character histogram
 <div id="hv-chart-3"></div>
+
+## AR spatial correlation
+<div id="hv-chart-4"></div>
 
 </div>
 

@@ -120,6 +120,7 @@ peak_plot11 = dd.hvplot.heatmap(y='region',
 #                       cmap='blues').opts(xrotation=45, fontsize={
 #                       cmap='RdBu_r').opts(xrotation=45, fontsize={
                        cmap='twilight').opts(xrotation=45, fontsize={
+#                       cmap='erdc_iceFire').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14
