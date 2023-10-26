@@ -8,6 +8,18 @@ import hvplot.pandas
 from PIL import Image
 import os, os.path
 from bokeh.models import HoverTool
+import matplotlib
+#from matplotlib import cm
+from matplotlib.colors import ListedColormap#, LinearSegmentedColormap
+
+
+top = matplotlib.colormaps['Blues_r']
+bottom = matplotlib.colormaps['Blues']
+
+newcolors = np.vstack((top(np.linspace(0, 1, 16)),
+                       bottom(np.linspace(0, 1, 16))))
+
+newcmp = ListedColormap(newcolors, name='cyclic')
 
 #angle = np.array([[  0,  86, 199],
 #       [ 23, 111, 271],
@@ -119,7 +131,8 @@ peak_plot11 = dd.hvplot.heatmap(y='region',
                        clim = (-180,180),
 #                       cmap='blues').opts(xrotation=45, fontsize={
 #                       cmap='RdBu_r').opts(xrotation=45, fontsize={
-                       cmap='twilight').opts(xrotation=45, fontsize={
+#                       cmap='twilight').opts(xrotation=45, fontsize={
+                       cmap='cyclic').opts(xrotation=45, fontsize={
 #                       cmap='erdc_iceFire').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,

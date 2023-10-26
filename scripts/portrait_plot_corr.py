@@ -21,9 +21,9 @@ np.set_printoptions(formatter={'float_kind':float_formatter})
 
 
 narr0 = np.loadtxt("../bo/bo_data/output_spatial_corr.txt")
-narr0 = np.around(narr0, decimals=1)
+narr0 = np.around(narr0, decimals=2)
 narr = narr0.reshape(6,-1)
-narr = np.round(narr, decimals=2)
+print(narr)
 
 field_list = ['lat','lon','area','width','length']
 region_list = ['N. Pacific','S. Pacific','N. Atlantic','S. Atlantic','Indian Ocean']
