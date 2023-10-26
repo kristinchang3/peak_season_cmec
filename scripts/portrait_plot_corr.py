@@ -16,11 +16,14 @@ from PIL import Image
 import os, os.path
 from bokeh.models import HoverTool
 
+float_formatter = "{:.2f}".format
+np.set_printoptions(formatter={'float_kind':float_formatter})
 
 
 narr0 = np.loadtxt("../bo/bo_data/output_spatial_corr.txt")
 narr0 = np.around(narr0, decimals=1)
 narr = narr0.reshape(6,-1)
+narr = np.round(narr, decimals=2)
 
 field_list = ['lat','lon','area','width','length']
 region_list = ['N. Pacific','S. Pacific','N. Atlantic','S. Atlantic','Indian Ocean']
@@ -121,7 +124,7 @@ peak_plot11 = dd.hvplot.heatmap(y='model',
                        clim = (0.8, 1),
 #                       cmap='blues').opts(xrotation=45, fontsize={
 #                       cmap='RdBu_r').opts(xrotation=45, fontsize={
-                       cmap='GnBu_r').opts(xrotation=45, fontsize={
+                       cmap='Oranges_r').opts(xrotation=45, fontsize={
                            'labels': 14,
                            'xticks': 14,
                            'yticks': 14
