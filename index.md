@@ -39,6 +39,10 @@ Visualizing the Peak Season CMEC data:
 
 ## Landfalling AR Peak Day Bias vs. ERA5
 <div id="hv-chart-2"></div>
+
+## AR character histogram
+<div id="hv-chart-3"></div>
+
 </div>
 
 </div>
